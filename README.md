@@ -17,13 +17,13 @@ VSCode's/cpptools extension has config files and logs that lets you  check if yo
 ---
 ## Table of Contents
 ### [Info](#Info)
-### [Prerequisites](#Prerequisites)
-### [Include Errors](#Include-Errors)
-### [Compiler Path](#Compiler-Path-Setting)
-### [Intellisense Mode](#Intellisense-Mode)
-### [C++ Standard](#C++-Standard)
-### [New File Errors](#New-File-Errors)
-### [Resetting Project](#Resetting-Project)
+### [Prerequisites](#prerequisites)
+### [Include Errors](#include-errors)
+### [Compiler Path](#compiler-path-setting)
+### [Intellisense Mode](#intellisense-mode)
+### [C++ Standard](#c++-standard)
+### [New File Errors](#new-file-errors)
+### [Resetting Project](#resetting-project)
 
 ---
 ---
