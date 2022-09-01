@@ -1,6 +1,6 @@
 # Unreal VSCode diy config check
 
-#### ***Version 0.0.5***
+#### ***Version 0.0.6***
 
 *How to check for certain errors with the VSCode Microsoft C++ (cpptools) extension and an Unreal Engine configuration.*
 
@@ -16,14 +16,14 @@ VSCode's/cpptools extension has config files and logs that lets you  check if yo
 ---
 ---
 ## Table of Contents
-### [Info](#Info)
-### [Prerequisites](#prerequisites)
-### [Include Errors](#include-errors)
+### [Info](#info)
+### [Prerequisites](#prerequisites-1)
+### [Include Errors](#include-errors-1)
 ### [Compiler Path](#compiler-path-setting)
-### [Intellisense Mode](#intellisense-mode)
-### [C++ Standard](#c++-standard)
-### [New File Errors](#new-file-errors)
-### [Resetting Project](#resetting-project)
+### [Intellisense Mode](#intellisense-mode-1)
+### [C++ Standard](#c-standard-1)
+### [New File Errors](#new-file-errors-1)
+### [Resetting Project](#resetting-project-1)
 
 ---
 ---
