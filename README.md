@@ -1,6 +1,6 @@
 # Unreal VSCode diy config check
 
-#### ***Version 0.0.6***
+#### ***Version 0.0.7***
 
 *How to check for certain errors with the VSCode Microsoft C++ (cpptools) extension and an Unreal Engine configuration.*
 
@@ -18,8 +18,11 @@ VSCode's/cpptools extension has config files and logs that lets you  check if yo
 ## Table of Contents
 ### [Info](#info)
 ### [Prerequisites](#prerequisites-1)
-### [Include Errors](#include-errors-1)
-### [Compiler Path](#compiler-path-setting)
+### [C++ Extension Realtime Logs](#c-extension-real-time-log)
+* ### [Compiler Path](#compiler-path-logs)
+* ### [Include Errors](#include-errors-logs)
+* ### [Default Intellisense](#default-intellisense-logs)
+
 ### [Intellisense Mode](#intellisense-mode-1)
 ### [C++ Standard](#c-standard-1)
 ### [New File Errors](#new-file-errors-1)
@@ -87,16 +90,11 @@ There are three Build task choices: Build, Clean, and Rebuild. You should almost
 
 ---
 ---
-# Include Errors
-*Checking for directories that are suppose to be included*
-```
-A lots of include errors can be resolved by resetting your project(Generating Project Files) See guide section below on how to do this(TODO)
-```
-
-### Missing includes are easy to check for by using the C++ logs mentions in the Prerequisites section of this guide.
+# C++ Extension Real Time Log
+*How to use the C++ real time logs*
 
 Parsing the log can be difficult but can be made easy by following these steps.
-1. Open your project and make sure both Intellisense icons are not active
+1. Open your project and make sure both Intellisense icons are not active(see [Info](#info) section)
 
     *Remember that the Tag Parser, when first run, can take awhile to turn off*
 
@@ -108,19 +106,40 @@ Parsing the log can be difficult but can be made easy by following these steps.
 
     *You should see your c_cpp_properties.json file contents and no other file contents.*
 
-4. Look at the C/C++ logs
+4. Looking at the C/C++ logs(see [Prerequisites](#prerequisites-1) section)
 
-## What the C/C++ logs show
+```
+If you look at the logs and see something like below, you forgot to do step 1
+```
+```
+  tag parsing file: E:\Program Files\Epic Games\UE_5.0\Engine\Source\Runtime\Experimental\Chaos\Public\ChaosCheck.h
+  tag parsing file: E:\Program Files\Epic Games\UE_5.0\Engine\Source\ThirdParty\AMD\Amf\core\Interface.h
+  tag parsing file: E:\Program Files\Epic Games\UE_5.0\Engine\Source\ThirdParty\nvTextureTools\nvTextureTools-2.0.8\src\src\nvmath\nvmath.h
+  tag parsing file: E:\Program Files\Epic Games\UE_5.0\Engine\Source\ThirdParty\nvTextureTools\nvTextureTools-2.0.8\src\src\nvmath\Vector.h
+```
 
-### Compiler Path
+## Compiler Path (logs)
+*Checking the C++ logs for anything wrong getting defaults from the C++ compiler*
 ```
 Attempting to get defaults from C++ compiler in "compilerPath" property: 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64\cl.exe'
 ```
-If anything is wrong with the compiler path the logs will show it here or near here.
+If anything is wrong with the compiler path the logs will show it here or near here. Mine was at the top of the logs.
+
+## Include Errors (logs)
+*Checking the C++ logs for directories that are suppose to be included*
+```
+A lot of include errors can be resolved by resetting your project(Generating Project Files) See guide section below on how to do this(TODO)
+```
+
+### Missing includes are easy to check for by using the C++ logs mentions in the Prerequisites section of this guide.
+
+
+
+
 
 *Note: You may get a bunch of the compiler path lines above*
 
-## Tag Parser Intellisense
+### Tag Parser Intellisense
 The Tag Parser will gather a list of a includes from all workspaces and then combine them into one list. The list will appear like so:
 ```
 Processing folder (non-recursive): C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO/2022/BUILDTOOLS/VC/TOOLS/MSVC/14.32.31326/INCLUDE
@@ -162,9 +181,9 @@ Processing folder (recursive): C:/PROGRAM FILES (X86)/WINDOWS KITS/10/INCLUDE/10
 
 *Extra Project Includes (Public/Private)*
 ```
-You may also have Public and Private project includes if using Unreal's Public/Private subdirectory system. If you are using these Unreal Created subdirectories and don't have these listed then you should reset your project to add them to your project's config.
+You may also have Public and Private project includes if using Unreal's Public/Private Source code subdirectory system. If you are using these Unreal Created subdirectories and don't have these listed then you should reset your project to add them to your project's config.
 ```
-## Default Intellisense
+## Default Intellisense (logs)
 *Checking what the Default Intellisense C++ logs tell us*
 ### *TODO*
 
